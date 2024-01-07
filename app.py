@@ -19,3 +19,9 @@ books = [
         'author': 'James Clear'
     }
 ]
+#GET ALL
+@app.route('/books', methods=['GET'])
+def get_books():
+    return jsonify(books)
+
+
