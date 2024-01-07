@@ -50,3 +50,13 @@ def add_book():
 
     return jsonify(books)
 
+#DELETE
+@app.route('/books/<int:id>',methods=['DELETE'])
+def delete_book(id):
+    for index, book in enumerate(books):
+        if(book.get('id') == id):
+            del books[index]
+
+            return jsonify(books)
+
+
