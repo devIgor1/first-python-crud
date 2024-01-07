@@ -25,3 +25,10 @@ def get_books():
     return jsonify(books)
 
 
+#GET BY ID
+@app.route('/books/<int:id>', methods=['GET'])
+def get_book_by_id(id):
+    for book in books:
+        if book.get('id') == id:
+            return jsonify(book)
+
